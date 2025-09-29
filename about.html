@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f766e" />
+    <title>TasteBite — About</title>
+    <meta name="description" content="Learn about TasteBite, your neighborhood food & beverages shop." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">TasteBite</a>
+
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav id="siteNav" class="site-nav" role="navigation">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="products.html">Products</a></li>
+            <li><a class="nav-link is-active" href="about.html" aria-current="page">About</a></li>
+            <li><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main" tabindex="-1">
+      <section class="section" aria-labelledby="about-heading">
+        <div class="container">
+          <h1 id="about-heading">About TasteBite</h1>
+          <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;">
+            <div>
+              <p>We are a local F&B shop passionate about fresh, tasty meals and beverages. From hearty sandwiches and crisp salads to smoothies and specialty coffee—everything is made with care.</p>
+              <p>Our mission is to serve quality food quickly without compromising on ingredients or flavor. Dine-in, take out, or order ahead—TasteBite is here for you.</p>
+            </div>
+            <div aria-hidden="true">
+              <div class="hero-placeholder" style="min-height:240px;background-image:url('assets/images/fresh & tasty (2).jpg');">
+                <div class="hero-caption">Locally sourced,<br/>crafted with care</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <p>
+          <span class="logo">TasteBite</span>
+          <span class="footer-sep" aria-hidden="true"> &middot; </span>
+          <a href="contact.html">Contact</a>
+          <span class="footer-sep" aria-hidden="true"> &middot; </span>
+          <a href="#">Privacy</a>
+        </p>
+        <p class="copyright">&copy; <span id="year"></span> TasteBite.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById('navToggle');
+      const nav = document.getElementById('siteNav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
+

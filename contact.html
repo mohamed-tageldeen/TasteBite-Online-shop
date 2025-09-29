@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f766e" />
+    <title>TasteBite — Contact</title>
+    <meta name="description" content="Contact TasteBite for catering, orders, or product questions." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">TasteBite</a>
+
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav id="siteNav" class="site-nav" role="navigation">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link" href="products.html">Products</a></li>
+            <li><a class="nav-link" href="about.html">About</a></li>
+            <li><a class="nav-link is-active" href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main" tabindex="-1">
+      <section class="section" aria-labelledby="contact-heading">
+        <div class="container narrow">
+          <h1 id="contact-heading">Contact us</h1>
+          <p>If you have a question about an order or a product, we&nbsp;can help.</p>
+
+          <form class="contact-form" action="#" method="post" novalidate>
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic" required>
+                <option value="" selected disabled>Select a topic</option>
+                <option>Order status</option>
+                <option>Returns</option>
+                <option>Product question</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Send message</button>
+              <p class="form-hint" role="status" aria-live="polite">We reply within 1–2 business days.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <p>
+          <span class="logo">TasteBite</span>
+          <span class="footer-sep" aria-hidden="true"> &middot; </span>
+          <a href="contact.html" aria-current="page">Contact</a>
+          <span class="footer-sep" aria-hidden="true"> &middot; </span>
+          <a href="#">Privacy</a>
+        </p>
+        <p class="copyright">&copy; <span id="year"></span> TasteBite.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById('navToggle');
+      const nav = document.getElementById('siteNav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
+

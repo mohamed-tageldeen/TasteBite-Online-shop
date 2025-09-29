@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f766e" />
+    <title>TasteBite — Products</title>
+    <meta name="description" content="Browse our fresh food and beverages at TasteBite." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">TasteBite</a>
+
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav id="siteNav" class="site-nav" role="navigation">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-link is-active" href="products.html" aria-current="page">Products</a></li>
+            <li><a class="nav-link" href="about.html">About</a></li>
+            <li><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main" tabindex="-1">
+      <section class="section" aria-labelledby="products-heading">
+        <div class="container">
+          <h1 id="products-heading">Our menu</h1>
+          <p class="narrow" style="color:#475569">Freshly made meals and beverages, perfect for any time of day.</p>
+
+          <div class="product-grid" style="margin-top:1rem;">
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/veggie wrap.jpg" alt="Veggie wrap with fresh greens" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Veggie Wrap</a></h3>
+                <p class="product-price" aria-label="Price: 6 dollars">$6.00</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/grilled panini.jpg" alt="Grilled panini sandwich" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Grilled Panini</a></h3>
+                <p class="product-price" aria-label="Price: 8 dollars">$8.00</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/berry smothie.jpg" alt="Berry smoothie in glass" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Berry Smoothie</a></h3>
+                <p class="product-price" aria-label="Price: 4 dollars">$4.00</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/iced latte.jpg" alt="Iced latte with milk" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Iced Latte</a></h3>
+                <p class="product-price" aria-label="Price: 3 dollars 50 cents">$3.50</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/caesar salad.jpg" alt="Fresh Caesar salad" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Caesar Salad</a></h3>
+                <p class="product-price" aria-label="Price: 7 dollars">$7.00</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/chocolate muffin.jpg" alt="Chocolate muffin" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Chocolate Muffin</a></h3>
+                <p class="product-price" aria-label="Price: 2 dollars 50 cents">$2.50</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <p>
+          <span class="logo">TasteBite</span>
+          <span class="footer-sep" aria-hidden="true"> &middot; </span>
+          <a href="contact.html">Contact</a>
+          <span class="footer-sep" aria-hidden="true"> &middot; </span>
+          <a href="#">Privacy</a>
+        </p>
+        <p class="copyright">&copy; <span id="year"></span> TasteBite.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById('navToggle');
+      const nav = document.getElementById('siteNav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
+

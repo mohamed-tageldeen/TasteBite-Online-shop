@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f766e" />
+    <title>TasteBite — Home</title>
+    <meta name="description" content="Fresh food and beverages made daily. TasteBite menu and specials." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">TasteBite</a>
+
+        <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <nav id="siteNav" class="site-nav" role="navigation">
+          <ul class="nav-list">
+            <li><a class="nav-link is-active" href="index.html" aria-current="page">Home</a></li>
+            <li><a class="nav-link" href="products.html">Products</a></li>
+            <li><a class="nav-link" href="about.html">About</a></li>
+            <li><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="site-main" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1 id="hero-heading">Fresh food & drinks, made daily</h1>
+            <p>Healthy bowls, hearty sandwiches, and specialty coffee. Order now or drop in.</p>
+            <p>
+              <a class="btn btn-primary" href="products.html">View menu</a>
+              <a class="btn btn-outline" href="contact.html">Contact us</a>
+            </p>
+          </div>
+          <div class="hero-media" aria-hidden="true">
+            <div class="hero-placeholder" style="background-image:url('assets/images/fresh & tasty.jpg');">
+              <div class="hero-caption">Seasonal specials,<br/>served hot & fresh</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="featured" class="section" aria-labelledby="featured-heading">
+        <div class="container">
+          <h2 id="featured-heading">Chef's picks</h2>
+          <div class="product-grid">
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/avocado bowl.jpg" alt="Avocado bowl with greens and grains" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Avocado Bowl</a></h3>
+                <p class="product-price" aria-label="Price: 9 dollars">$9</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/chicken panini.jpg" alt="Grilled chicken panini sandwich" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Chicken Panini</a></h3>
+                <p class="product-price" aria-label="Price: 8 dollars">$8</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/mango smothie.jpg" alt="Mango smoothie in glass" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Mango Smoothie</a></h3>
+                <p class="product-price" aria-label="Price: 4 dollars">$4</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <a class="product-media" href="#">
+                <img src="assets/images/iced latte.jpg" alt="Iced latte with milk" loading="lazy" />
+              </a>
+              <div class="product-body">
+                <h3 class="product-title"><a href="#">Iced Latte</a></h3>
+                <p class="product-price" aria-label="Price: 3 dollars 50 cents">$3.50</p>
+                <button class="btn btn-secondary" type="button">Add to cart</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <p>
+          <span class="logo">TasteBite</span>
+          <span class="footer-sep" aria-hidden="true"> &middot; </span>
+          <a href="contact.html">Contact</a>
+          <span class="footer-sep" aria-hidden="true"> &middot; </span>
+          <a href="#">Privacy</a>
+        </p>
+        <p class="copyright">&copy; <span id="year"></span> TasteBite.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById('navToggle');
+      const nav = document.getElementById('siteNav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>
+
+
